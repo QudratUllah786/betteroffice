@@ -1,5 +1,38 @@
 # @betteroffice/docx
 
+## 0.4.2
+
+### Patch Changes
+
+- 6cf0642: Autofit tables widen a column to fit its longest word instead of breaking the word, as Word does.
+- 23b3dee: Long documents finish laying out all their pages sooner, with the same layout as before.
+- 00184a2: Tracked text replacements apply faster in long documents.
+- 77bf845: A floating table that crosses the bottom of a page now continues on the next page as in Word, with the text after it wrapping beside the continuation.
+- 0c677e2: Saving no longer copies paragraph spacing and other properties inherited from document defaults or styles onto each paragraph as direct formatting.
+- f1e8f47: A list number wider than its hanging indent now moves the paragraph text to the next tab stop, as in Word.
+- 8e68a95: Long documents finish laying out all their pages sooner, with the same layout as before.
+- 9b2b5c7: A bordered paragraph with a hanging indent now draws its box around the outdented first line, as Word does.
+- 08c4763: Picture outlines from Word documents now paint, with theme colours and Word's default line width.
+- 2736dfa: A revision preview decision now lays out again only around the changes it decides instead of paginating the whole document.
+- 4e6a9e4: The first-page preview from `previewFirstPage` parses only the start of the document body it shows, so it opens faster on long documents.
+- ba93cf9: With `experimentalWorkerOpen`, a read-only editor serves host proposals, plugin overlays and navigation from the worker without loading the document on the main thread. New `getParagraphIdentities` and `resolveParagraphAnchors` on the editor ref. Meanwhile, synchronous ref members that need the document throw the new `DocxReplicaNotReadyError`.
+- 053dcda: A word split across differently formatted text runs wraps to the next line whole instead of breaking at the run boundary, as Word does.
+- 380dfac: Saving keeps the target of links the editor doesn't open, such as links to local files.
+- 380dfac: Saving after an edit now keeps the paragraphs you didn't edit as they were, including inherited formatting and content the editor doesn't model.
+- 2eebfc4: Paragraph indents that styles and document defaults set with `w:start` and `w:end` now apply, as in Word.
+- 6f8eb9b: Tables that set only some of their cell margins take the other sides from the table style, so cell text wraps like in Word.
+- ac0a55f: Bordered tables now have the same height as in Word, so the content after them sits where Word places it.
+- 4797db4: Tracked changes inside content controls, and content controls inside tracked changes, keep their text when a document is opened, shown and saved.
+- 3423ba4: Vertical text in vertically merged table cells wraps at the height of the merged cell, so merged header labels stay on one line like in Word.
+- 1037096: Long documents finish laying out all their pages sooner, with the same layout as before.
+- 0bcc0eb: With `experimentalWorkerOpen`, accepting, rejecting or undoing a proposal decision lays out sooner: the worker's reply already carries the font requirements of the next layout.
+- c87e5a2: The resident worker answers repeated font requirement requests for an unchanged document from its last answer, so the first layout after a worker open starts sooner.
+- b690db7: With `experimentalWorkerOpen`, typing and deleting plain text responds faster in long documents.
+- a0ea217: With the opt-in `experimentalWorkerOpen`, the first-page preview now shows only pages whose content matches the finished layout, and `onFirstPagePainted` waits until such a page is presented. Page-count fields stay provisional until layout completes.
+- d99f19c: With `experimentalWorkerOpen` and `previewFirstPage`, the first-page preview now opens and lays out in the resident worker, so the main thread parses and lays out nothing before the first page shows.
+- bbfdeb2: With `experimentalWorkerOpen`, host proposals in a read-only editor paint sooner, and pages outside the viewport build during idle time.
+- 02ff93a: With `experimentalWorkerOpen`, pages far from the viewport give their prepared display back, so worker memory stays bounded while scrolling long documents.
+
 ## 0.4.1
 
 ### Patch Changes

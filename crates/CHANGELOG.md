@@ -1,5 +1,23 @@
 # @betteroffice/rust-crates
 
+## 0.4.2
+
+### Patch Changes
+
+- 23b3dee: Long documents finish laying out all their pages sooner, with the same layout as before.
+- 77bf845: A floating table that crosses the bottom of a page now continues on the next page as in Word, with the text after it wrapping beside the continuation.
+- f1e8f47: A list number wider than its hanging indent now moves the paragraph text to the next tab stop, as in Word.
+- 8e68a95: Long documents finish laying out all their pages sooner, with the same layout as before.
+- 9b2b5c7: A bordered paragraph with a hanging indent now draws its box around the outdented first line, as Word does.
+- 08c4763: Picture outlines from Word documents now paint, with theme colours and Word's default line width.
+- 2736dfa: A revision preview decision now lays out again only around the changes it decides instead of paginating the whole document.
+- 4e6a9e4: The first-page preview from `previewFirstPage` parses only the start of the document body it shows, so it opens faster on long documents.
+- 6f8eb9b: Tables that set only some of their cell margins take the other sides from the table style, so cell text wraps like in Word.
+- ac0a55f: Bordered tables now have the same height as in Word, so the content after them sits where Word places it.
+- 3423ba4: Vertical text in vertically merged table cells wraps at the height of the merged cell, so merged header labels stay on one line like in Word.
+- 1037096: Long documents finish laying out all their pages sooner, with the same layout as before.
+- b690db7: With `experimentalWorkerOpen`, typing and deleting plain text responds faster in long documents.
+
 ## 0.4.1
 
 ### Patch Changes

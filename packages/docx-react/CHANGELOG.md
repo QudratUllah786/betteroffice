@@ -1,5 +1,54 @@
 # @betteroffice/docx-react
 
+## 0.4.2
+
+### Patch Changes
+
+- 3f09227: Plugin page overlays stay mounted while an edit lays out pages that are being built in the background.
+- 08c4763: Picture outlines from Word documents now paint, with theme colours and Word's default line width.
+- 4408f2e: Canvas pages draw with the document's glyph outlines from their first paint, so the first page shows sooner.
+- ba93cf9: With `experimentalWorkerOpen`, a read-only editor serves host proposals, plugin overlays and navigation from the worker without loading the document on the main thread. New `getParagraphIdentities` and `resolveParagraphAnchors` on the editor ref. Meanwhile, synchronous ref members that need the document throw the new `DocxReplicaNotReadyError`.
+- 380dfac: Saving after an edit now keeps the paragraphs you didn't edit as they were, including inherited formatting and content the editor doesn't model.
+- 0bcc0eb: With `experimentalWorkerOpen`, accepting, rejecting or undoing a proposal decision lays out sooner: the worker's reply already carries the font requirements of the next layout.
+- 864355f: With `experimentalWorkerOpen`, pages are prepared for painting only around the viewport instead of across the whole document, and `whenLayoutComplete` resolves once the layout is complete and the visible pages are ready.
+- 02c5459: With `experimentalWorkerOpen`, text, Enter, paste, IME input and Backspace typed while an editable document is still loading apply in order once it is ready.
+- a0ea217: With the opt-in `experimentalWorkerOpen`, the first-page preview now shows only pages whose content matches the finished layout, and `onFirstPagePainted` waits until such a page is presented. Page-count fields stay provisional until layout completes.
+- a921480: With `experimentalWorkerOpen`, `onError` stays silent when the full document takes over the first-page preview's worker while the preview is still laying out.
+- 4cbc6d4: With `experimentalWorkerOpen` and `previewFirstPage`, the first-page preview draws its first two pages, so it shows sooner; the following pages arrive with the full document.
+- d99f19c: With `experimentalWorkerOpen` and `previewFirstPage`, the first-page preview now opens and lays out in the resident worker, so the main thread parses and lays out nothing before the first page shows.
+- bbfdeb2: With `experimentalWorkerOpen`, host proposals in a read-only editor paint sooner, and pages outside the viewport build during idle time.
+- 02ff93a: With `experimentalWorkerOpen`, pages far from the viewport give their prepared display back, so worker memory stays bounded while scrolling long documents.
+- Updated dependencies [6cf0642]
+- Updated dependencies [23b3dee]
+- Updated dependencies [00184a2]
+- Updated dependencies [77bf845]
+- Updated dependencies [0c677e2]
+- Updated dependencies [f1e8f47]
+- Updated dependencies [8e68a95]
+- Updated dependencies [9b2b5c7]
+- Updated dependencies [08c4763]
+- Updated dependencies [2736dfa]
+- Updated dependencies [4e6a9e4]
+- Updated dependencies [ba93cf9]
+- Updated dependencies [053dcda]
+- Updated dependencies [380dfac]
+- Updated dependencies [380dfac]
+- Updated dependencies [2eebfc4]
+- Updated dependencies [6f8eb9b]
+- Updated dependencies [ac0a55f]
+- Updated dependencies [4797db4]
+- Updated dependencies [3423ba4]
+- Updated dependencies [1037096]
+- Updated dependencies [0bcc0eb]
+- Updated dependencies [c87e5a2]
+- Updated dependencies [b690db7]
+- Updated dependencies [a0ea217]
+- Updated dependencies [d99f19c]
+- Updated dependencies [bbfdeb2]
+- Updated dependencies [02ff93a]
+  - @betteroffice/docx@0.4.2
+  - @betteroffice/docx-i18n@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes
